@@ -24,7 +24,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_PATH = ROOT.parent / "data" / "bank-full-files" / "bank-full.csv"
+DATA_PATH = ROOT / "bank-full.csv"
 MODEL_DIR = ROOT / "model"
 TEST_DATA_PATH = ROOT / "test_data.csv"
 LOGGER = logging.getLogger(__name__)
