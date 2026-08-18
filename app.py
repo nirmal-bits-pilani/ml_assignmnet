@@ -41,15 +41,17 @@ def load_artifacts():
 
 def encode_uploaded_data(uploaded, encoders):
     encoded = uploaded.copy()
+    feature_columns = encoders["feature_columns"]
+    missing_columns = set(feature_columns) - set(encoded.columns)
+    if missing_columns:
+        raise ValueError(f"Missing required columns: {sorted(missing_columns)}")
     for column, encoder in encoders["features"].items():
-        if column not in encoded:
-            raise ValueError(f"Missing required column: {column}")
         values = encoded[column].astype(str)
         unknown = set(values) - set(encoder.classes_)
         if unknown:
             raise ValueError(f"Unknown values in {column}: {sorted(unknown)}")
         encoded[column] = encoder.transform(values)
-    return encoded[encoders["features"].keys()]
+    return encoded[feature_columns]
 
 
 st.set_page_config(page_title="Deposit Lens", page_icon="DL", layout="wide")

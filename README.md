@@ -11,7 +11,7 @@ The dataset is the UCI Bank Marketing `bank-full.csv` dataset. It contains 45,21
 ## Links
 
 - GitHub Repository: [https://github.com/nirmal-bits-pilani/ml_assignmnet](https://github.com/nirmal-bits-pilani/ml_assignmnet)
-- Live Streamlit App: **Add the Streamlit Community Cloud URL after deployment.**
+- Live Streamlit App: [https://ml-2025da04223.streamlit.app/](https://ml-2025da04223.streamlit.app/)
 
 ## Models Used
 
